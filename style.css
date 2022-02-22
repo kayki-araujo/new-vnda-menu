@@ -1,0 +1,186 @@
+/* css reset */
+@import url(https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css);
+/* font Montserrat*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;800&display=swap');
+/* css variables */
+:root {
+  /* padrões */
+  --color-main: hsla(355, 62%, 45%, 1);
+  --color-header: hsla(0, 0%, 100%, 1);
+  --color-bg: hsla(240, 43%, 97%, 1);
+  --color-menu-opacity: hsla(0, 0%, 68%, 05);
+  --font-main: 'Montserrat', sans-serif;
+  --animation-time-menu: 250ms;
+}
+/* height and font */
+html,
+body {
+  height: 1px;
+  min-height: 100%;
+  font-family: var(--font-main);
+}
+/* environment setting */
+header {
+  height: 117px;
+  background-color: var(--color-header);
+}
+main {
+  width: 100%;
+  height: 200%;
+  background-color: var(--color-bg);
+}
+.util__spacer {
+  width: 100%;
+  height: 1px;
+}
+
+/* menu */
+.menu {
+  color: var(--color-main);
+  font-weight: 700;
+  font-size: 1rem;
+}
+.menu__checkbox {
+  display: none;
+}
+.menu__opacity {
+  display: none;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--color-menu-opacity);
+}
+
+/* !! DEBUG !! */
+/* .menu {
+  background-color: rgb(252, 223, 218) !important;
+}
+.menu__header {
+  outline: 1px black solid;
+}
+.menu__categories {
+  background-color: rgb(248, 182, 248);
+} */
+/* !! /DEBUG !! */
+
+/* 0 -> 768px (mobile) */
+@media screen and (max-width: 768px) {
+  .menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+
+    height: 100vh;
+    width: 100%;
+    max-width: 384px;
+
+    transition: left var(--animation-time-menu);
+
+    background-color: var(--color-header);
+  }
+
+  .menu__checkbox:checked ~ .menu {
+    left: 0;
+  }
+
+  .menu__checkbox:checked ~ .menu__opacity {
+    display: block;
+  }
+
+  .menu__content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .menu__header {
+    display: flex;
+    padding: 30px 27px;
+    align-items: center;
+  }
+
+  .menu__bars {
+    margin-right: 15px;
+  }
+
+  .menu__cart {
+    position: relative;
+  }
+
+  .menu__cart__badge {
+    position: absolute;
+    left: 15px;
+    bottom: 15px;
+  }
+
+  .menu__categories {
+    flex: 1;
+  }
+
+  .categories__list .categories__list {
+    display: none;
+  }
+
+  .categories__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .categories__title {
+    height: 50px;
+  }
+
+  .categories__item:hover > .categories__list {
+    display: block;
+  }
+
+  .menu__separator {
+    box-sizing: border-box;
+    height: 2px;
+    align-self: center;
+    width: 95%;
+    background-color: hsla(240, 43%, 97%, 1);
+  }
+
+  .menu__navigation {
+    padding: 16px;
+  }
+
+  .menu__navigation__item {
+    display: flex;
+    align-items: center;
+    font-size: 0.875rem;
+  }
+
+  .menu__navigation__icon {
+    margin-right: 16px;
+  }
+}
+/* 768px -> ∞ (desktop) */
+@media screen and (min-width: 769px) {
+}
+/* 0 ->320px */
+@media screen and (max-width: 320px) {
+}
+/*320px -> 375px*/
+@media screen and (min-width: 321px) and (max-width: 375px) {
+}
+/*375px -> 768px*/
+@media screen and (min-width: 376px) and (max-width: 768px) {
+}
+/* 768px -> 1024px*/
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+}
+/* 1024px -> 1440px*/
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+}
+/* 1440px -> 1920px*/
+@media screen and (min-width: 1441px) and (max-width: 1920px) {
+}
+/* 1920px -> ∞ */
+@media screen and (min-width: 1921px) {
+}
